@@ -248,11 +248,16 @@ img, video { max-width: 100%; display: block; }
 }
 .statement-text {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(28px, 4.2vw, 44px);
+  font-size: clamp(26px, 3.8vw, 40px);
   font-weight: 200; font-style: italic;
   line-height: 1.55; letter-spacing: .02em;
   color: var(--fg); max-width: 1120px; margin-inline: auto;
   text-wrap: balance;
+}
+.statement-text span { display: block; }
+@media (max-width: 680px) {
+  .statement-text { text-wrap: pretty; }
+  .statement-text span { display: inline; }
 }
 .statement-attr {
   margin-top: 40px; font-size: 11px; letter-spacing: .15em;
@@ -383,7 +388,7 @@ img, video { max-width: 100%; display: block; }
 .pg-text .sec-label { color: var(--gold); }
 .pg-text h3 {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(26px, 3vw, 36px); font-weight: 200;
+  font-size: clamp(24px, 2.5vw, 32px); font-weight: 200;
   color: var(--inv-fg); letter-spacing: .04em; line-height: 1.35;
   text-wrap: balance;
 }
@@ -615,7 +620,7 @@ footer {
 <!-- ── STATEMENT ── -->
 <section id="statement">
   <p class="statement-text reveal">
-    "誰かに『ありがとう』を伝えたい時、ただ何を渡すかだけでなく、その人に何を伝えたいのか。そこまで一緒に届けられるものがあったらいい。"
+    <span>"誰かに『ありがとう』を伝えたい時、</span><span>ただ何を渡すかだけでなく、</span><span>その人に何を伝えたいのか。</span><span>そこまで一緒に届けられるものがあったらいい。"</span>
   </p>
   <p class="statement-attr reveal reveal-delay-1">斉藤 竜輔 / Founder, Island Jerky</p>
 </section>
