@@ -332,11 +332,8 @@ img, video { max-width: 100%; display: block; }
   background: var(--black-2);
   position: relative; overflow: hidden;
 }
-.movie-frame video {
-  width: 100%; height: 100%; object-fit: cover;
-}
-.movie-note {
-  font-size: 12px; color: var(--inv-muted); letter-spacing: .06em;
+.movie-frame iframe {
+  width: 100%; height: 100%; display: block; border: 0;
 }
 
 /* ── PRODUCER FULL BLEED ── */
@@ -527,7 +524,6 @@ footer {
     .mobile-menu-toggle span { width:16px; height:1px; background:currentColor; transition:transform .2s ease; }
     .mobile-menu-toggle[aria-expanded="true"] span:first-child { transform:translateY(3px) rotate(45deg); }
     .mobile-menu-toggle[aria-expanded="true"] span:last-child { transform:translateY(-3px) rotate(-45deg); }
-    .movie-poster { width:100%; height:100%; display:block; object-fit:cover; object-position:center 25%; }
     @media (max-width:680px) {
       #nav { gap:10px; }
       .nav-logo { width:130px; }
@@ -667,9 +663,15 @@ footer {
       <h2>代表メッセージ<br>動画</h2>
     </div>
     <div class="movie-frame reveal reveal-delay-1">
-      <img class="movie-poster" src="images/ref-founder-portrait.jpg" alt="代表メッセージ動画のイメージ" loading="lazy">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/dBbBZTcKKUk?rel=0"
+        title="Island Jerky ブランドムービー"
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
     </div>
-    <p class="movie-note reveal reveal-delay-2">動画　〇〇〇〇</p>
   </div>
 </section>
 
