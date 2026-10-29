@@ -448,17 +448,25 @@ img, video { max-width: 100%; display: block; }
 }
 .cf-sub { max-width: 700px; font-size: 15px; color: var(--inv-sub); line-height: 2; }
 .cf-stats {
-  display: flex; gap: 48px; flex-wrap: wrap; justify-content: center;
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start; gap: 16px;
   padding: 40px 0; border-top: 1px solid var(--inv-rule); border-bottom: 1px solid var(--inv-rule);
   width: 100%; max-width: 700px;
 }
-.cf-stat { display: flex; flex-direction: column; gap: 6px; text-align: center; }
-.cf-stat-l { font-size: 9px; letter-spacing: .25em; text-transform: uppercase; color: var(--gold); }
-.cf-stat-v {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 40px; font-weight: 200; color: var(--inv-fg); line-height: 1;
+.cf-stat {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 8px; min-width: 0; text-align: center;
 }
-.cf-stat-v small { font-size: 18px; }
+.cf-stat-l {
+  min-height: 1.2em; font-size: 9px; line-height: 1.2;
+  letter-spacing: .25em; text-transform: uppercase; color: var(--gold);
+}
+.cf-stat-v {
+  font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
+  font-size: 26px; font-weight: 300; color: var(--inv-fg);
+  line-height: 1.25; letter-spacing: 0; white-space: nowrap;
+  font-variant-numeric: lining-nums tabular-nums;
+}
 .btn-gold {
   display: inline-block;
   background: var(--gold); color: var(--black);
@@ -507,7 +515,8 @@ footer {
   .product-specs { flex-wrap: wrap; }
   .spec-item { flex: none; width: 50%; }
   .spec-item:nth-child(2) { border-right: none; }
-  .cf-stats { gap: 24px; }
+  .cf-stats { grid-template-columns: 1fr; gap: 24px; }
+  .cf-stat-v { font-size: 22px; }
 }
 @media (max-width: 360px) {
   .cf-h { font-size: 22px; }
@@ -534,7 +543,7 @@ footer {
       #mobile-nav-links.is-open a { display:block; padding:14px 0; }
     }
 
-.gothic-num { font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif; font-variant-numeric: lining-nums; }
+.gothic-num { font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif; font-variant-numeric: lining-nums tabular-nums; }
 
 /* ── READABILITY: larger type with responsive spacing ── */
 body { font-size: 17px; }
@@ -555,7 +564,7 @@ body { font-size: 17px; }
 .gift-dsc { font-size: 18px; line-height: 2; }
 .cf-sub { font-size: 18px; }
 .cf-note { font-size: 15px; }
-.cf-stat-v small { font-size: 20px; }
+
 .btn-gold { font-size: 13px; }
 .footer-company { font-size: 15px; }
 .footer-links a { font-size: 16px; }
@@ -825,15 +834,15 @@ body { font-size: 17px; }
     <div class="cf-stats reveal reveal-delay-2">
       <div class="cf-stat">
         <div class="cf-stat-l">目標金額</div>
-        <div class="cf-stat-v"><span class="gothic-num">300</span><small>万</small></div>
+        <div class="cf-stat-v"><span class="gothic-num">300</span>万円</div>
       </div>
       <div class="cf-stat">
         <div class="cf-stat-l">期間</div>
-        <div class="cf-stat-v" style="font-size:24px;letter-spacing:.03em;"><span class="gothic-num">10</span>/<span class="gothic-num">22</span> – <span class="gothic-num">12</span>/<span class="gothic-num">31</span></div>
+        <div class="cf-stat-v"><span class="gothic-num">10</span>/<span class="gothic-num">22</span> – <span class="gothic-num">12</span>/<span class="gothic-num">31</span></div>
       </div>
       <div class="cf-stat">
         <div class="cf-stat-l">発送予定</div>
-        <div class="cf-stat-v" style="font-size:24px;letter-spacing:.03em;"><span class="gothic-num">2027</span>年<span class="gothic-num">2</span>月</div>
+        <div class="cf-stat-v"><span class="gothic-num">2027</span>年<span class="gothic-num">2</span>月</div>
       </div>
     </div>
     <a href="https://camp-fire.jp/projects/980679/preview?token=3gpje0gr" class="btn-gold reveal reveal-delay-3">CAMPFIREで支援する ↗</a>
